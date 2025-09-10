@@ -1,0 +1,16 @@
+A = []
+
+# ввод массива 4х4
+print("Введите элементы массива A[4][4]:")
+for i in range(4):
+    row = list(map(int, input(f"строка {i + 1}: ").split()))
+    A.append(row)
+
+# ищем максимальный элемент
+max_value = A[0][3]  # начнем с первого элемента доп диагонали
+for i in range(4):
+    j = 3 - i  # т.к. i + j = 3
+    if A[i][j] > max_value:
+        max_value = A[i][j]
+
+print("макс элемент доп диагонали:", max_value)
