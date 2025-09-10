@@ -1,0 +1,10 @@
+a = [int(input(f"Введите элемент {i+1}: ")) for i in range(10)]
+
+# сортируем нечет числа
+odd_numbers = [x for x in a if x % 2 != 0]
+
+if odd_numbers:
+    max_odd = max(odd_numbers)
+    print(" макс нечетное число:", max_odd)
+else:
+    print(" в массиве нет нечетных чисел.")
