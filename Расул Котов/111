@@ -1,0 +1,46 @@
+# Дан массив из 10 действительных чисел. Необходимо найти максимум их четных элементов.
+
+numbers = [1.0, 2.0, 3.5, 4.0, 5.0, 6.0, 7.2, 8.0, 9.0, 10.0]
+
+# сортируем четные числа
+even_numbers = [x for x in numbers if x.is_integer() and int(x) % 2 == 0]
+
+# ищем максимум среди них
+if even_numbers:
+    max_even = max(even_numbers)
+    print(" макс среди чётных элементов:", max_even)
+else:
+    print(" четных элементов нет")
+
+#Определите, больше ли в двумерном массиве A(5,10) положительных чисел или больше отрицательных чисел.
+
+import random
+
+A = [[random.randint(-10, 10) for _ in range(10)] for _ in range(5)]
+
+positive_count = 0
+negative_count = 0
+
+# подсчёт положительных и отрицательных чисел
+for row in A:
+    for value in row:
+        if value > 0:
+            positive_count += 1
+        elif value < 0:
+            negative_count += 1
+
+# вывод результата
+print("Массив:")
+for row in A:
+    print(row)
+
+print("\nПоложительных чисел:", positive_count)
+print("Отрицательных чисел:", negative_count)
+
+if positive_count > negative_count:
+    print("Положительных чисел больше.")
+elif negative_count > positive_count:
+    print("Отрицательных чисел больше.")
+else:
+    print("Положительных и отрицательных чисел поровну.")
+
